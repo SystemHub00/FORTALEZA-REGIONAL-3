@@ -32,21 +32,23 @@ VALID_DDDS = {
 # 1. LOCAIS
 # =============================================================================
 LOCAL_OPTIONS = [
-    {"id": "1", "nome": "ASSOCIAÇÃO UNIÃO DE JOVENS VICENTE PINZON"},
+    {"id": "1", "nome": "INSTITUTO JUNTOS PELO BEM"},
 ]
 
 # =============================================================================
 # 2. CATÁLOGO DE CURSOS
 # =============================================================================
 COURSE_CATALOG = [
-    {"id": "1", "nome": "26/DSUN 01 - DESIGNER DE UNHAS"},
+    {"id": "1", "nome": "26/DSBR 02 - DESIGNER DE SOBRANCELHAS"},
+    {"id": "2", "nome": "26/SOMD 01 - SOCIAL MEDIA"},
 ]
 
 # =============================================================================
 # 3. HORÁRIOS
 # =============================================================================
 SCHEDULE_OPTIONS = {
-    "1": {"dias_aula": "Quarta a Sexta", "horario": "09h até 16h"},
+    "1": {"dias_aula": "Quarta a Sexta",   "horario": "13h até 18h"},
+    "2": {"dias_aula": "Segunda e Quarta", "horario": "09h até 11h"},
 }
 
 # =============================================================================
@@ -54,16 +56,18 @@ SCHEDULE_OPTIONS = {
 # =============================================================================
 START_DATE_OPTIONS = {
     "1": "17/06/2026",
+    "2": "22/06/2026",
 }
 END_DATE_OPTIONS = {
     "1": "19/06/2026",
+    "2": "22/07/2026",
 }
 
 # =============================================================================
 # 6. ENDEREÇOS
 # =============================================================================
 ADDRESS_OPTIONS = {
-    "1": "📍Rua Pontamar, nº 555, bairro Cais do Porto - CEP.: 60.181-210",
+    "1": "📍Rua Professor Leite Gondim, nº 689, bairro Antônio Bezerra - CEP.: 60.360-330",
 }
 
 # =============================================================================
@@ -72,9 +76,15 @@ ADDRESS_OPTIONS = {
 TURMA_OPTIONS = [
     {
         "id": "1", "curso_id": "1", "local_id": "1",
-        "turma_codigo": "26/DSUN-01",
+        "turma_codigo": "26/DSBR-02",
         "agenda_id": "1", "periodo_id": "1",
         "encerramento_id": "1", "endereco_id": "1",
+    },
+    {
+        "id": "2", "curso_id": "2", "local_id": "1",
+        "turma_codigo": "26/SOMD-01",
+        "agenda_id": "2", "periodo_id": "2",
+        "encerramento_id": "2", "endereco_id": "1",
     },
 ]
 
@@ -156,7 +166,7 @@ TEMPLATE_WIZARD = """\
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Fortaleza - Regional II</title>
+    <title>Fortaleza - Regional III</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/static/assistant.css">
     <link href="https://fonts.googleapis.com/css2?family=Wise:wght@400;700;900&display=swap" rel="stylesheet">
@@ -732,7 +742,7 @@ TEMPLATE_WIZARD = """\
         <div class="header-logos">
             <img src="/static/logo-prefeitura.png" alt="Prefeitura" class="logo-prefeitura-topo">
             <div class="header-divider"></div>
-            <img src="/static/logoprojeto.jpeg"    alt="Fortaleza Regional II" class="logo-projeto-topo">
+            <img src="/static/logoprojeto.jpeg"    alt="Fortaleza Regional III" class="logo-projeto-topo">
         </div>
     </header>
 
@@ -761,7 +771,7 @@ TEMPLATE_WIZARD = """\
                 <section class="wizard-panel" data-step="index">
                     <div class="hero-grid">
                         <div class="hero-card">
-                            <span class="hero-pill">FORTALEZA - REGIONAL II</span>
+                            <span class="hero-pill">FORTALEZA - REGIONAL III</span>
                             <h1 class="hero-title">INVISTA EM VOCÊ. CONSTRUA SEU FUTURO.</h1>
                             <p class="hero-subtitle">
                                 Descubra novas possibilidades, adquira conhecimentos práticos e dê o
@@ -773,7 +783,8 @@ TEMPLATE_WIZARD = """\
                                 <div class="hero-highlight">
                                     <strong>CURSOS DISPONÍVEIS:</strong>
                                     <div class="cursos-lista">
-                                        <span class="curso-tag">&#128133; 26/DSUN 01 - Designer de Unhas</span>
+                                        <span class="curso-tag">&#128133; 26/DSBR 02 - Designer de Sobrancelhas</span>
+                                        <span class="curso-tag">&#128218; 26/SOMD 01 - Social Media</span>
                                     </div>
                                 </div>
 
@@ -804,7 +815,7 @@ TEMPLATE_WIZARD = """\
 
                                 <!-- Sobre o projeto -->
                                 <div class="hero-highlight">
-                                    <strong>FORTALEZA - REGIONAL II</strong>
+                                    <strong>FORTALEZA - REGIONAL III</strong>
                                     Programa de qualificação profissional gratuita para ampliar suas
                                     oportunidades e fortalecer sua entrada no mercado de trabalho.
                                 </div>
@@ -1655,7 +1666,7 @@ TEMPLATE_CONFIRMACAO = """\
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Fortaleza - Regional II</title>
+    <title>Fortaleza - Regional III</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/static/assistant.css">
     <link href="https://fonts.googleapis.com/css2?family=Wise:wght@400;700;900&display=swap" rel="stylesheet">
@@ -1878,7 +1889,7 @@ TEMPLATE_CONFIRMACAO = """\
         <div class="header-logos">
             <img src="/static/logo-prefeitura.png" alt="Prefeitura" class="logo-prefeitura-topo">
             <div class="header-divider"></div>
-            <img src="/static/logoprojeto.jpeg"    alt="Fortaleza Regional II" class="logo-projeto-topo">
+            <img src="/static/logoprojeto.jpeg"    alt="Fortaleza Regional III" class="logo-projeto-topo">
         </div>
     </header>
 
@@ -2118,7 +2129,7 @@ def confirmacao():
     protocolo = session.get("protocolo")
     if not protocolo:
         return redirect(url_for("home"))
-    home_url = "https://fortaleza-regional-2.onrender.com"
+    home_url = "https://fortaleza-regional-3.onrender.com"
     return render_template_string(
         TEMPLATE_CONFIRMACAO,
         protocolo          = protocolo,
