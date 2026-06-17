@@ -47,20 +47,20 @@ COURSE_CATALOG = [
 # 3. HORÁRIOS
 # =============================================================================
 SCHEDULE_OPTIONS = {
-    "1": {"dias_aula": "Quarta a Sexta",   "horario": "13h até 18h"},
-    "2": {"dias_aula": "Segunda e Quarta", "horario": "09h até 11h"},
+    "1": {"dias_aula": "Segunda a Sexta", "horario": "08h até 12h"},  # DSBR02 - atualizado
+    "2": {"dias_aula": "Segunda e Quarta", "horario": "09h até 11h"}, # SOMD01 - inalterado
 }
 
 # =============================================================================
 # 4-5. DATAS
 # =============================================================================
 START_DATE_OPTIONS = {
-    "1": "17/06/2026",
-    "2": "22/06/2026",
+    "1": "17/06/2026",  # inalterado
+    "2": "22/06/2026",  # inalterado
 }
 END_DATE_OPTIONS = {
-    "1": "19/06/2026",
-    "2": "22/07/2026",
+    "1": "23/06/2026",  # DSBR02 - atualizado (era 19/06)
+    "2": "22/07/2026",  # inalterado
 }
 
 # =============================================================================
