@@ -40,27 +40,24 @@ LOCAL_OPTIONS = [
 # =============================================================================
 COURSE_CATALOG = [
     {"id": "1", "nome": "26/DSBR 02 - DESIGNER DE SOBRANCELHAS"},
-    {"id": "2", "nome": "26/SOMD 01 - SOCIAL MEDIA"},
 ]
 
 # =============================================================================
 # 3. HORÁRIOS
 # =============================================================================
 SCHEDULE_OPTIONS = {
-    "1": {"dias_aula": "Segunda a Sexta", "horario": "08h até 12h"},  # DSBR02 - atualizado
-    "2": {"dias_aula": "Segunda e Quarta", "horario": "09h até 11h"}, # SOMD01 - inalterado
+    "1": {"dias_aula": "Segunda a Sexta", "horario": "08h até 12h"},
 }
 
 # =============================================================================
 # 4-5. DATAS
 # =============================================================================
 START_DATE_OPTIONS = {
-    "1": "17/06/2026",  # inalterado
-    "2": "22/06/2026",  # inalterado
+    "1": "17/06/2026",
 }
+
 END_DATE_OPTIONS = {
-    "1": "23/06/2026",  # DSBR02 - atualizado (era 19/06)
-    "2": "22/07/2026",  # inalterado
+    "1": "23/06/2026",
 }
 
 # =============================================================================
@@ -75,22 +72,21 @@ ADDRESS_OPTIONS = {
 # =============================================================================
 TURMA_OPTIONS = [
     {
-        "id": "1", "curso_id": "1", "local_id": "1",
+        "id": "1",
+        "curso_id": "1",
+        "local_id": "1",
         "turma_codigo": "26/DSBR-02",
-        "agenda_id": "1", "periodo_id": "1",
-        "encerramento_id": "1", "endereco_id": "1",
-    },
-    {
-        "id": "2", "curso_id": "2", "local_id": "1",
-        "turma_codigo": "26/SOMD-01",
-        "agenda_id": "2", "periodo_id": "2",
-        "encerramento_id": "2", "endereco_id": "1",
+        "agenda_id": "1",
+        "periodo_id": "1",
+        "encerramento_id": "1",
+        "endereco_id": "1",
     },
 ]
 
 # =============================================================================
 # 8. FUNÇÕES AUXILIARES
 # =============================================================================
+
 def build_course_options():
     local_by_id  = {opt["id"]: opt for opt in LOCAL_OPTIONS}
     course_by_id = {opt["id"]: opt for opt in COURSE_CATALOG}
